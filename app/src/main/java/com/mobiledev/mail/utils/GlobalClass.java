@@ -77,4 +77,29 @@ public class GlobalClass {
             return diff / DAY_MILLIS + " days ago";
         }
     }
+
+
+    public static String getTime(long time, Context ctx) {
+        if (time < 1000000000000L) {
+            time *= 1000;
+        }
+
+        long now = System.currentTimeMillis();;
+        final long diff = time-now;
+        if (diff < MINUTE_MILLIS) {
+            return "just now";
+        } else if (diff < 2 * MINUTE_MILLIS) {
+            return "1m";
+        } else if (diff < 50 * MINUTE_MILLIS) {
+            return diff / MINUTE_MILLIS + "m";
+        } else if (diff < 90 * MINUTE_MILLIS) {
+            return "1h";
+        } else if (diff < 24 * HOUR_MILLIS) {
+            return diff / HOUR_MILLIS + "h";
+        } else if (diff < 48 * HOUR_MILLIS) {
+            return "1d";
+        } else {
+            return diff / DAY_MILLIS + "d";
+        }
+    }
 }

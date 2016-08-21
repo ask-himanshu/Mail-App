@@ -53,8 +53,7 @@ public class MailListViewAdapter extends RecyclerView.Adapter<MailListViewAdapte
         }
         Long timeStamp = Long.valueOf(mResponseMail.get(position).getTimeStamp());
 
-        String result = GlobalClass.getTimeAgo(timeStamp,mCtx);
-        result = result.replace("hours ago", "h");
+        String result = GlobalClass.getTime(timeStamp,mCtx);
         holder.timeText.setText(result);
         if(mListener!=null){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
