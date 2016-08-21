@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inbox"
+            android:icon="@drawable/inbox_icon"
+            android:title="Inbox"/>
+        <item
+            android:id="@+id/nav_star"
+            android:icon="@drawable/star_icon"
+            android:title="Starred" />
+
+    </group>
+
+</menu>
